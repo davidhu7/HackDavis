@@ -6,4 +6,4 @@ app = Flask(__name__)
 def index(name=None):
     return render_template('index.html', name=name)
 
-
+app.run()
