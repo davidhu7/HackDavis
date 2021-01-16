@@ -1,11 +1,21 @@
 <!DOCTYPE html>
 <html lang = "en">
 <style>
-    h1{text-align: center;}
-    .mydiv{
+    h1{
         text-align: center;
     }
     
+    .mydiv{
+        text-align: center;
+    } 
+    
+    body {
+        background-color: #A9A9A9;
+    }
+    
+    bill.relative {
+        position: relative;
+    }
 </style>
 <head>
     <title>The Greatest Sports Game Predictor</title>
@@ -13,11 +23,14 @@
 </head>
 
 <body>
-<h1>The Predictor</h1>
-<div class = "mydiv">
-    <input type = "text" id = "firstTeam" placeholder = "First team" size = 20></input>
-    <input type = "text" id = "secondTeam" placeholder = "Second team" size = 20></input>
-    <button>Predict</button>
-</div>
+    <h1>The Predictor</h1>
+    <div class = "mydiv">
+        <input type = "text" id = "firstTeam" placeholder = "First team" size = 20></input>
+        <input type = "text" id = "secondTeam" placeholder = "Second team" size = 20></input>
+        <button>Predict</button>
+    </div>
+    <div class = "bill">
+        <img src = "10000bill.jpg" id = "money" width = "500" height = "200">
+    </div>
 </body>
 </html>
