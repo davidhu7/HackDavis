@@ -1,23 +1,64 @@
 <!DOCTYPE html>
 <html lang = "en">
-<style>
-    h1{text-align: center;}
-    .mydiv{
-        text-align: center;
-    }
-    
-</style>
-<head>
-    <title>The Greatest Sports Game Predictor</title>
-    <meta charset="UTF-8">
-</head>
 
-<body>
-<h1>The Predictor</h1>
-<div class = "mydiv">
-    <input type = "text" id = "firstTeam" placeholder = "First team" size = 20></input>
-    <input type = "text" id = "secondTeam" placeholder = "Second team" size = 20></input>
-    <button>Predict</button>
-</div>
-</body>
+    <head>
+        <!--Bootstrap CDN-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+        <title>The Greatest Sports Game Predictor</title>
+        <meta charset="UTF-8">
+    </head>
+
+    <body>
+
+        <!--Navigation Bar-->
+        <header>
+          <div class="collapse bg-dark" id="navbarHeader">
+            <div class="container">
+              <div class="row">
+                <div class="col-sm-8 col-md-7 py-4">
+                  <h4 class="text-white">About</h4>
+                  <p class="text-muted">This is a machine-learning based project used to predict the different possible outcomes of matchups between two MLB teams when they go head-to-head.</p>
+                </div>
+                <div class="col-sm-4 offset-md-1 py-4">
+                  <h4 class="text-white">Contact</h4>
+                  <ul class="list-unstyled">
+                    <li><a href="https://github.com/ksong200" class="text-white">David Hu</a></li>
+                    <li><a href="https://github.com/kotaroyama" class="text-white">Kotaro Yamamoto</a></li>
+                    <li><a href="https://github.com/brandonsrho57" class="text-white">Brandon Rho</a></li>
+                    <li><a href="https://github.com/" class="text-white">Rojan Mahajan</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="navbar navbar-dark bg-dark shadow-sm">
+            <div class="container">
+              <a class="navbar-brand d-flex align-items-center" href="https://www.mlb.com">
+                <img src="mlb-logo.png" width="30" height="20" alt="MLB Logo">
+                <strong>MLB Predictor</strong>
+              </a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+            </div>
+          </div>
+        </header>
+        <!--Navigation Bar-->
+
+        <!--Jumbotron-->
+        <div class="jumbotron">
+          <h1 class="display-4">The Predictor</h1>
+          <p class="lead">Choose a year and a team to go head-to-head!</p>
+          <hr class="my-4">
+          <div id="inputs" class="container-fluid">
+            <input type = "text" id = "firstTeam" placeholder = "First team" size = 20></input>
+            <input type = "text" id = "secondTeam" placeholder = "Second team" size = 20></input>
+            <button>Predict</button>
+          </div>
+        </div>
+
+        <!--Javascript and Popper plugin -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+
+    </body>
 </html>
