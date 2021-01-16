@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang = "en">
+
+    <head>
+        <!--Bootstrap CDN-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+        <title>The Greatest Sports Game Predictor</title>
+        <meta charset="UTF-8">
+    </head>
+
+    <body>
+
+        <!--Navigation Bar-->
+        <header>
+          <div class="collapse bg-dark" id="navbarHeader">
+            <div class="container">
+              <div class="row">
+                <div class="col-sm-8 col-md-7 py-4">
+                  <h4 class="text-white">About</h4>
+                  <p class="text-muted">This is a machine-learning based project used to predict the different possible outcomes of matchups between two MLB teams when they go head-to-head.</p>
+                </div>
+                <div class="col-sm-4 offset-md-1 py-4">
+                  <h4 class="text-white">Contact</h4>
+                  <ul class="list-unstyled">
+                    <li><a href="https://github.com/ksong200" class="text-white">David Hu</a></li>
+                    <li><a href="https://github.com/kotaroyama" class="text-white">Kotaro Yamamoto</a></li>
+                    <li><a href="https://github.com/brandonsrho57" class="text-white">Brandon Rho</a></li>
+                    <li><a href="https://github.com/Rojanmhj2055" class="text-white">Rojan Mahajan</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="navbar navbar-dark bg-dark shadow-sm">
+            <div class="container">
+              <a class="navbar-brand d-flex align-items-center" href="https://www.mlb.com">
+                <img src="static/mlb_logo.jpg" width="30" height="20" alt="MLB Logo">
+                <strong>MLB Predictor</strong>
+              </a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+            </div>
+          </div>
+        </header>
+        <!--Navigation Bar-->
+
+        <!--Input Class-->
+        <div class="album py-5 bg-light">
+            <div class="container">
+              <h1 class="display-4">
+                  <div class="d-flex justify-content-center">The Predictor</div>
+              </h1>
+              <p class="lead">
+                  <div class="d-flex justify-content-center">Choose a year and a team to go head-to-head!</div>
+              </p>
+              <hr class="my-4">
+
+                <!-- Team, Year-->
+                <table class="table">
+                    <thead class="thead-light">
+                        <th><h3>Team 1</h3></th>
+                        <th><h3>Team 2</h3></th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">
+                              <select class="form-select" aria-label="Teams available">
+                                <option selected>Team</option>
+                                <optgroup label="AL Central"></optgroup>
+                                    <option value="1">Chicago White Sox</option>
+                                    <option value="2">Cleveland Indians</option>
+                                    <option value="3">Detroit Tigers</option>
+                                    <option value="4">Kansas City Royals</option>
+                                    <option value="5">Minnesota Twins</option>
+                                <optgroup label="AL East"></optgroup>
+                                    <option value="6">Baltimore Orioles</option>
+                                    <option value="7">Boston Red Sox</option>
+                                    <option value="8">New York Yankees</option>
+                                    <option value="9">Tampa Bay Rays</option>
+                                    <option value="10">Toronto Blue Jays</option>
+                                <optgroup label="AL West"></optgroup>
+                                    <option value="11">Houston Astros</option>
+                                    <option value="12">Los Angeles Angels</option>
+                                    <option value="13">Oakland Athletics</option>
+                                    <option value="14">Seattle Mariners</option>
+                                    <option value="15">Texas Rangers</option>
+                                <optgroup label="NL Central"></optgroup>
+                                  <option value="16">Chicago Cubs</option>
+                                  <option value="17">Cincinnati Reds</option>
+                                  <option value="18">Milwaukee Brewers</option>
+                                  <option value="19">Pittsburgh Pirates</option>
+                                  <option value="20">St. Louis Cardinals</option>
+                                <optgroup label="NL East"></optgroup>
+                                  <option value="21">Atlanta Braves</option>
+                                  <option value="22">Miami Marlins</option>
+                                  <option value="23">New York Mets</option>
+                                  <option value="24">Philadelphia Phillies</option>
+                                  <option value="25">Washington Nationals</option>
+                                <optgroup label="NL West"></optgroup>
+                                  <option value="21">Arizona Diamondbacks</option>
+                                  <option value="22">Colorado Rockies</option>
+                                  <option value="23">Los Angeles Dodgers</option>
+                                  <option value="24">San Diego Padres</option>
+                                  <option value="25">San Francisco Giants</option>
+                                </select>
+                            </th>
+                            <th scope="row">
+                                <select class="form-select" aria-label="Teams available">
+                                <option selected>Team</option>
+                                <optgroup label="AL Central"></optgroup>
+                                    <option value="1">Chicago White Sox</option>
+                                    <option value="2">Cleveland Indians</option>
+                                    <option value="3">Detroit Tigers</option>
+                                    <option value="4">Kansas City Royals</option>
+                                    <option value="5">Minnesota Twins</option>
+                                <optgroup label="AL East"></optgroup>
+                                    <option value="6">Baltimore Orioles</option>
+                                    <option value="7">Boston Red Sox</option>
+                                    <option value="8">New York Yankees</option>
+                                    <option value="9">Tampa Bay Rays</option>
+                                    <option value="10">Toronto Blue Jays</option>
+                                <optgroup label="AL West"></optgroup>
+                                    <option value="11">Houston Astros</option>
+                                    <option value="12">Los Angeles Angels</option>
+                                    <option value="13">Oakland Athletics</option>
+                                    <option value="14">Seattle Mariners</option>
+                                    <option value="15">Texas Rangers</option>
+                                <optgroup label="NL Central"></optgroup>
+                                  <option value="16">Chicago Cubs</option>
+                                  <option value="17">Cincinnati Reds</option>
+                                  <option value="18">Milwaukee Brewers</option>
+                                  <option value="19">Pittsburgh Pirates</option>
+                                  <option value="20">St. Louis Cardinals</option>
+                                <optgroup label="NL East"></optgroup>
+                                  <option value="21">Atlanta Braves</option>
+                                  <option value="22">Miami Marlins</option>
+                                  <option value="23">New York Mets</option>
+                                  <option value="24">Philadelphia Phillies</option>
+                                  <option value="25">Washington Nationals</option>
+                                <optgroup label="NL West"></optgroup>
+                                  <option value="21">Arizona Diamondbacks</option>
+                                  <option value="22">Colorado Rockies</option>
+                                  <option value="23">Los Angeles Dodgers</option>
+                                  <option value="24">San Diego Padres</option>
+                                  <option value="25">San Francisco Giants</option>
+                                </select>
+                            </th>
+                        </tr>
+                        <tr>
+                            <th scope="row">
+                                <select class="form-select" aria-label="Years Available">
+                                  <optgroup label="Years"></optgroup>
+                                  <option value="1">2015</option>
+                                  <option value="2">2014</option>
+                                  <option value="3">2013</option>
+                                  <option value="4">2012</option>
+                                  <option value="5">2011</option>
+                                  <option value="5">2010</option>
+                                  <option value="5">2009</option>
+                                  <option value="5">2008</option>
+                                  <option value="5">2007</option>
+                                  <option value="5">2006</option>
+                                  <option value="5">2005</option>
+                                  <option value="5">2004</option>
+                                  <option value="5">2003</option>
+                                  <option value="5">2002</option>
+                                  <option value="5">2001</option>
+                                  <option value="5">2000</option>
+                              </select>
+                            </th>
+                            <th scope="row">
+                                <select class="form-select" aria-label="Years Available">
+                                  <optgroup label="Years"></optgroup>
+                                  <option value="1">2015</option>
+                                  <option value="2">2014</option>
+                                  <option value="3">2013</option>
+                                  <option value="4">2012</option>
+                                  <option value="5">2011</option>
+                                  <option value="5">2010</option>
+                                  <option value="5">2009</option>
+                                  <option value="5">2008</option>
+                                  <option value="5">2007</option>
+                                  <option value="5">2006</option>
+                                  <option value="5">2005</option>
+                                  <option value="5">2004</option>
+                                  <option value="5">2003</option>
+                                  <option value="5">2002</option>
+                                  <option value="5">2001</option>
+                                  <option value="5">2000</option>
+                              </select>
+                            </th>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!--Javascript and Popper plugin -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+
+    </body>
+</html>
