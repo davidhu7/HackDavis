@@ -1,0 +1,44 @@
+{% extends 'index.html' %}
+
+{% block content %}
+
+    {% if create_user_unsuccessful %}
+    <div class="alert alert-danger" role="alert">
+        <p>Username and Password must be at least one letter!</p>
+    </div>
+    {% endif %}
+
+    {% if create_user_successful %}
+    <div class="alert alert-success" role="alert">
+        <p>You made an account! Please log in!</p>
+    </div>
+    {% endif %}
+
+    {% if length_error %}
+    <div class="alert alert-danger" role="alert">
+        <p>One of the forms is not long enough! Please try again!</p>
+    </div>
+    {% endif %}
+
+    {% if username_error %}
+    <div class="alert-alert-danger" role="alert">
+        <p>Username already exists! User a different name!</p>
+    </div>
+    {% endif %}
+
+    {% if password_error %}
+    <div class="alert alert-danger" role="alert">
+        <p>Passwords don't match! Please try again!</p>
+    </div>
+    {% endif %}
+
+    <div class="container d-flex justify-content-center">
+        <form action=/create_user method=POST>
+            <label for="username">Username:</label><input type=text name=username><br>
+            <label for="password">Password:</label><input type=password name=password><br>
+            <label for="repeatpassword">Repeat Password:</label><input type=password name=repeatpassword><br>
+            <input type=submit value="Create Account">
+        </form>
+    </div>
+
+{% endblock %}
