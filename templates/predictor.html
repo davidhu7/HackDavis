@@ -1,0 +1,19 @@
+{% extends 'index.html' %}
+
+{% block prediction %}
+  <div class="container">
+    <div class = "container1"></div>
+      <div class="d-flex justify-content-center">
+        <h2>Predicted Winner</h2>
+      </div>
+    </div>
+    <div class="d-flex justify-content-center">
+      <div class="col-4">
+        <h3>{{ context["winning_team"]  }}</h3>
+      </div>
+      <div class="col-4">
+        <h3>{{ context["confidence"]  }}</h3>
+      </div>
+    </div>
+  </div>
+{% endblock %}

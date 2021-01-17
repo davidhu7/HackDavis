@@ -1,36 +1,111 @@
 <!DOCTYPE html>
-<html lang = "en">
-<style>
-    h1{
-        text-align: center;
-    }
-    
-    .mydiv{
-        text-align: center;
-    } 
-    
-    body {
-        background-color: #A9A9A9;
-    }
-    
-    bill.relative {
-        position: relative;
-    }
-</style>
-<head>
+<html lang="en">
+
+  <head>
+    <!--Bootstrap CDN-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link href="static/style.css" rel="stylesheet">
     <title>The Greatest Sports Game Predictor</title>
     <meta charset="UTF-8">
-</head>
+  </head>
 
-<body>
-    <h1>The Predictor</h1>
-    <div class = "mydiv">
-        <input type = "text" id = "firstTeam" placeholder = "First team" size = 20></input>
-        <input type = "text" id = "secondTeam" placeholder = "Second team" size = 20></input>
-        <button>Predict</button>
+  <body>
+
+    <!--Navigation Bar-->
+    <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+
+        <!--Navbar Image-->
+        <a class="navbar-brand" id="mlb-logo" target="_blank" href="https://mlb.com">
+            <img src="/static/mlb_logo.jpg" width="30" height="20">MLB
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls=navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item active">
+              <a href="/" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item active">
+              <a href="/staff" class="nav-link">Contributors</a>
+            </li>
+          </ul>
+          <ul class="navbar-nav ml-auto">
+            {% if username %}
+              </li>
+              <li class="nav-item active">
+                <a href="/logout" class="nav-link">Log Out</a>
+              </li>
+              <li class="nav-item active">
+                <a href="delete_user/{{username}}" class="nav-link">Delete Account</a>
+              </li>
+            {% else %}
+              <li class="nav-item active">
+                <a href="/login" class="nav-link">Log In</a>
+              </li>
+              <li class="nav-item active">
+                <a href="/create_user" class="nav-link">Create Account</a>
+              </li>
+            {% endif %}
+          </ul>
+        </div>
+      </div>
+    </nav>
+    </header>
+
+    <!--Carousel!-->
+    <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-bs-target="#myCarousel" data-bs-slide-to="0" class="active"></li>
+        <li data-bs-target="#myCarousel" data-bs-slide-to="1"></li>
+        <li data-bs-target="#myCarousel" data-bs-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner">
+
+        <div class="carousel-item active">
+          <img src="/static/mlbb.jpg" width="100%" height="45%">
+        </div>
+
+        <div class="carousel-item">
+          <img src="/static/tatis.jpg" width="100%" height="45%">
+        </div>
+
+        <div class="carousel-item">
+          <img src="/static/field.jpg" width="100%" height="45%">
+        </div>
+      </div>
+
+      <a class="carousel-control-prev" href="#myCarousel" role="button" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#myCarousel" role="button" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </a>
     </div>
-    <div class = "bill">
-        <img src = "10000bill.jpg" id = "money" width = "500" height = "200">
-    </div>
-</body>
+    
+    {% block content %}
+    {% endblock %}
+
+    {% block prediction %}
+    {% endblock %}
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <!--Footer-->
+    <footer class="container">
+      <p class="float-end"><a href="#top">Back to top</a></p>
+      <p>&copy; 2021-2021 Predictor, Inc. &middot; <a href="https://github.com/ksong200/HackDavis">Source Code</a> &middot; <a href="https://hackdavis.io">HackDavis</a></p>
+    </footer>
+
+    <!--Javascript and Popper plugin -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+  </body>
 </html>
