@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
   <head>
     <!--Bootstrap CDN-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
@@ -7,17 +8,21 @@
     <title>The Greatest Sports Game Predictor</title>
     <meta charset="UTF-8">
   </head>
+
   <body>
+
     <!--Navigation Bar-->
+    <header>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container-fluid">
+
         <!--Navbar Image-->
         <a class="navbar-brand" id="mlb-logo" target="_blank" href="https://mlb.com">
             <img src="/static/mlb_logo.jpg" width="30" height="20">MLB
         </a>
-				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls=navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon"></span>
-				</button>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls=navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav me-auto">
             <li class="nav-item active">
@@ -48,6 +53,55 @@
         </div>
       </div>
     </nav>
+    </header>
+
+    <!--Carousel!-->
+    <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-bs-target="#myCarousel" data-bs-slide-to="0" class="active"></li>
+          <li data-bs-target="#myCarousel" data-bs-slide-to="1"></li>
+          <li data-bs-target="#myCarousel" data-bs-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+
+          <div class="carousel-item active">
+            <img src="/static/mlbb.jpg" width="100%" height="75%">
+            <div class="container">
+              <div class="carousel-caption text-start">
+                <h1>MLB Game Predictor</h1>
+                <p>Predict MLB Games.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <img src="/static/tatis.jpg" width="100%" height="75%">
+            <div class="container">
+              <div class="carousel-caption">
+                <h1>30 teams. One winner.</h1>
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <img src="/static/field.jpg" width="100%" height="75%">
+            <div class="container">
+              <div class="carousel-caption text-end">
+                <h1>Which team will win?</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <a class="carousel-control-prev" href="#myCarousel" role="button" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#myCarousel" role="button" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </a>
+      </div>
     
     {% block content %}
     {% endblock %}
@@ -55,14 +109,16 @@
     {% block prediction %}
     {% endblock %}
 
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
     <!--Footer-->
-    <footer class="footer text-muted bg-light">
-      <div class="container">
-        <p class="float-end mb-1">
-          <a href="#top">Back to top</a>
-        </p>
-        <p class="mb-0">New to baseball? <a target="_blank" href="https://www.mlb.com/">Visit MLB</a>.</p>
-      </div>
+    <footer class="container">
+      <p class="float-end"><a href="#top">Back to top</a></p>
+      <p>&copy; 2021-2021 Predictor, Inc. &middot; <a href="https://github.com/ksong200/HackDavis">Source Code</a> &middot; <a href="https://hackdavis.io">HackDavis</a></p>
     </footer>
 
     <!--Javascript and Popper plugin -->
