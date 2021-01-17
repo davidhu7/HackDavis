@@ -3,7 +3,9 @@
 {% block content %}
 
     <div class="container-fluid d-flex justify-content-center">
-        <h2>Welcome, {{username}}!</h2>
+        {% if username %}
+          <h2>Welcome, {{username}}!</h2>
+        {% endif %}
     </div>
 
     <!--Input Class-->
