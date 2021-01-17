@@ -1,7 +1,17 @@
 {% extends 'index.html' %}
 
 {% block prediction %}
-  <div class="container justify-content-center">
-    <h2>Predicted Winner</h2>
+  <div class="container">
+    <div class="row justify-content-center">
+      <h2>Predicted Winner</h2>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-4">
+        <h3>{{ context["winning_team"]  }}</h3>
+      </div>
+      <div class="col-4">
+        <h3>{{ context["confidence"]  }}</h3>
+      </div>
+    </div>
   </div>
 {% endblock %}

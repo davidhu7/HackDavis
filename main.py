@@ -36,12 +36,16 @@ def submit():
         year1 = teams_years.YEARS[request.form.get('year1')]
         year2 = teams_years.YEARS[request.form.get('year2')]
 
-        print(f"Team 1: {team1}")
-        print(f"Team 2: {team2}")
-        print(f"Year 1: {year1}")
-        print(f"Year 2: {year2}")
+# print(f"Team 1: {team1}")
+# print(f"Team 2: {team2}")
+# print(f"Year 1: {year1}")
+# print(f"Year 2: {year2}")
+        
+        dummy_data = {"winning_team": team1, "confidence": 70}
+        return render_template('predictor.html', context=dummy_data)
     else:
         print("GET")
+        return render_teamplate('error.html')
 
 
 @app.route('/staff')
