@@ -81,12 +81,22 @@ def index():
 @app.route('/submit', methods=['GET', 'POST'])
 def submit():
     if request.method == 'POST':
-        print(request.form.get('team1'))
-        print(request.form.get('team2'))
-        print(request.form.get('year1'))
-        print(request.form.get('year2'))
+        team1 = TEAMS[request.form.get('team1')]
+        team2 = TEAMS[request.form.get('team2')]
+        year1 = YEARS[request.form.get('year1')]
+        year2 = YEARS[request.form.get('year2')]
+
+        print(f"Team 1: {team1}")
+        print(f"Team 2: {team2}")
+        print(f"Year 1: {year1}")
+        print(f"Year 2: {year2}")
     else:
         print("GET")
+
+
+@app.route('/staff')
+def staff():
+    return render_template('staff.html')
 
 
 @app.route('/login', methods=['get', 'post'])
