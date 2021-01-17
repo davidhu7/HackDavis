@@ -18,6 +18,11 @@ body {
   margin-bottom: 60px;
 }
 
+.carousel {
+  height: 500px;
+  overflow: hidden;
+}
+
 .footer {
   position: absolute;
   bottom: 0;
