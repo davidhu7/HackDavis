@@ -1,85 +1,75 @@
 <!DOCTYPE html>
 <html lang = "en">
+  <head>
+    <!--Bootstrap CDN-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link href="static/style.css" rel="stylesheet">
+    <title>The Greatest Sports Game Predictor</title>
+    <meta charset="UTF-8">
+  </head>
+  <body>
+    <!--Navigation Bar-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
 
-    <head>
-        <!--Bootstrap CDN-->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-        <title>The Greatest Sports Game Predictor</title>
-        <meta charset="UTF-8">
-    </head>
+        <!--Navbar Image-->
+        <a class="navbar-brand" id="mlb-logo" target="_blank" href="https://mlb.com">
+            <img src="/static/mlb_logo.jpg" width="30" height="20">MLB
+        </a>
+        <div class="collapse navbar-collapse" id="navbarSupportContent">
 
-    <body>
-        <!--Navigation Bar-->
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item active">
+              <a href="/" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item active">
+              <a href="/staff" class="nav-link">Contributors</a>
+            </li>
+          </ul>
 
-            <!--Navbar Image-->
-            <a class="navbar-brand" href="https://mlb.com">
-                <img src="/static/mlb_logo.jpg" width="30" height="20">MLB
-            </a>
+          <ul class="navbar-nav ml-auto">
+            {% if username %}
+              </li>
+              <li class="nav-item active">
+                <a href="/logout" class="nav-link">Log Out</a>
+              </li>
+              <li class="nav-item active">
+                <a href="delete_user/{{username}}" class="nav-link">Delete Account</a>
+              </li>
+            {% else %}
+              <li class="nav-item active">
+                <a href="/login" class="nav-link">Log In</a>
+              </li>
+              <li class="nav-item active">
+                <a href="/create_user" class="nav-link">Create Account</a>
+              </li>
+            {% endif %}
+          </ul>
 
-
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls=navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a href="/" class="nav-link">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="/staff">Contributors</a>
-                    </li>
-                    {% if username %}
-                    </li>
-                    <li class="nav-item">
-                        <a href="/logout">Log Out</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="delete_user/{{username}}">Delete Account</a>
-                    </li>
-                    {% else %}
-                    <li class="nav-item">
-                        <a href="/login">Log In</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="/create_user">Create Account</a>
-                    </li>
-                    {% endif %}
-                </ul>
-            </div>
-        </nav>
-        <!--Navigation Bar-->
-
-        <div class="d-flex bd-highlight">
-          <div class="p-2 flex-fill bd-highlight"><a href="/">Home</a></div>
-          {% if username %}
-          <div class="p-2 flex-fill bd-highlight"><a href="/logout">Log Out</a></div>
-          <div class="p-2 flex-fill bd-highlight"><a href="/delete_user">Delete Account</a></div>
-          {% else %}
-          <div class="p-2 flex-fill bd-highlight"><a href="/login">Log In</a></div>
-          <div class="p-2 flex-fill bd-highlight"><a href="/create_user">Create Account</a></div>
-          {% endif %}
         </div>
 
-        {% block content %}
-        {% endblock %}
+      </div>
+    </nav>
+    
+    {% block content %}
+    {% endblock %}
 
-        {% block prediction %}
-        {% endblock %}
+    {% block prediction %}
+    {% endblock %}
 
-        <!--Footer-->
-        <footer class="text-muted py-5">
-          <div class="container">
-            <p class="float-end mb-1">
-              <a href="#top">Back to top</a>
-            </p>
-            <p class="mb-0">New to baseball? <a href="https://www.mlb.com/">Visit the homepage</a>.</p>
-          </div>
-        </footer>
+    <!--Footer-->
+    <footer class="footer">
+      <div class="container">
+        <div class="text-muted py-5">
+          <p class="float-end mb-1">
+            <a href="#top">Back to top</a>
+          </p>
+          <p class="mb-0">New to baseball? <a href="https://www.mlb.com/">Visit the homepage</a>.</p>
+        </div>
+      </div>
+    </footer>
 
-        <!--Javascript and Popper plugin -->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
-
-    </body>
+    <!--Javascript and Popper plugin -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+  </body>
 </html>
