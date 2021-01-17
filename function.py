@@ -3,8 +3,6 @@ import tensorflow as tf
 from tensorflow import keras
 
 
-
-
 model = tf.keras.models.load_model('./MLmodels/games.h5')
 dataset= pd.read_csv("./MLmodels/data.csv")
 
@@ -14,7 +12,9 @@ def get_prediction(name,year):
     datas =data.copy()
     if len(datas.index)!=0:
        prediction = model.predict(datas.values)
-       return prediction
+       return float(prediction)
     return 0
 
-print(get_prediction("Arizona Diamondbacks",2001))
+if __name__ == '__main__':
+    print(get_prediction('Seattle Mariners', 2010))
+

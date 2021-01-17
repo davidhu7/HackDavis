@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, make_response
 import sqlite3
 
+import function
 import teams_years
 
 app = Flask(__name__)
@@ -36,13 +37,22 @@ def submit():
         year1 = teams_years.YEARS[request.form.get('year1')]
         year2 = teams_years.YEARS[request.form.get('year2')]
 
-# print(f"Team 1: {team1}")
-# print(f"Team 2: {team2}")
-# print(f"Year 1: {year1}")
-# print(f"Year 2: {year2}")
+        pred_team1 = function.get_prediction(team1, int(year1))
+        pred_team2 = function.get_prediction(team2, int(year2))
+        game_pred = {}
+
+        if pred_team1 > pred_team2:
+            game_pred["winning_team"] = team1
+            game_pred["losing_team"] = team2
+            game_pred["margin"] = pred_team1 - pred_team2
+        else:
+            game_pred["winning_team"] = team2
+            game_pred["losing_team"] = team1
+            game_pred["margin"] = pred_team2 - pred_team1
         
-        dummy_data = {"winning_team": team1, "confidence": 70}
-        return render_template('predictor.html', context=dummy_data)
+        print(game_pred)
+
+        return render_template('predictor.html', context=game_pred)
     else:
         print("GET")
         return render_template('error.html')
