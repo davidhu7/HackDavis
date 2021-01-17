@@ -46,26 +46,22 @@
         </header>
         <!--Navigation Bar-->
 
+        <div class="d-flex bd-highlight">
+          <div class="p-2 flex-fill bd-highlight"><a href="/">Home</a></div>
+          {% if username %}
+          <div class="p-2 flex-fill bd-highlight"><a href="/logout">Log Out</a></div>
+          <div class="p-2 flex-fill bd-highlight"><a href="/delete_user">Delete Account</a></div>
+          {% else %}
+          <div class="p-2 flex-fill bd-highlight"><a href="/login">Log In</a></div>
+          <div class="p-2 flex-fill bd-highlight"><a href="/create_user">Create Account</a></div>
+          {% endif %}
+        </div>
+
         {% block content %}
         {% endblock %}
 
         {% block prediction %}
         {% endblock %}
-
-        <div>
-            <table>
-                <thead>
-                <a href="/">Home <span class="sr-only">(current)</span></a>
-                {% if username %}
-                <a href="/logout">Log Out</a>
-                <a href="/delete_user/{{username}}">Delete Account</a>
-                {% else %}
-                <a href="/login">Log In</a>
-                <a href="/create_user">Create Account</a>
-                {% endif %}
-                </thead>
-            </table>
-        </div>
 
         <!--Footer-->
         <footer class="text-muted py-5">
@@ -73,7 +69,6 @@
             <p class="float-end mb-1">
               <a href="#top">Back to top</a>
             </p>
-            <p class="mb-1">This is the footer</p>
             <p class="mb-0">New to baseball?<a href="https://www.mlb.com/">Visit the homepage</a>.</p>
           </div>
         </footer>
