@@ -10,38 +10,45 @@
 
     <body>
         <!--Navigation Bar-->
-        <header id="top">
-          <div class="collapse bg-dark" id="navbarHeader">
-            <div class="container">
-              <div class="row">
-                <div class="col-sm-8 col-md-7 py-4">
-                  <h4 class="text-white">About</h4>
-                  <p class="text-muted">This is a machine-learning based project used to predict the different possible outcomes of matchups between two MLB teams when they go head-to-head.</p>
-                </div>
-                <div class="col-sm-4 offset-md-1 py-4">
-                  <h4 class="text-white">Contact</h4>
-                  <ul class="list-unstyled">
-                    <li><a href="https://github.com/ksong200" class="text-white">David Hu</a></li>
-                    <li><a href="https://github.com/kotaroyama" class="text-white">Kotaro Yamamoto</a></li>
-                    <li><a href="https://github.com/brandonsrho57" class="text-white">Brandon Rho</a></li>
-                    <li><a href="https://github.com/Rojanmhj2055" class="text-white">Rojan Mahajan</a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="navbar navbar-dark bg-dark shadow-sm">
-            <div class="container">
-              <a class="navbar-brand d-flex align-items-center" href="https://www.mlb.com">
-                <img src="static/mlb_logo.jpg" width="30" height="20" alt="MLB Logo">
-                <strong>MLB Predictor</strong>
-              </a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+            <!--Navbar Image-->
+            <a class="navbar-brand" href="https://mlb.com">
+                <img src="/static/mlb_logo.jpg" width="30" height="20">MLB
+            </a>
+
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls=navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
-              </button>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a href="/" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/staff">Contributors</a>
+                    </li>
+                    {% if username %}
+                    </li>
+                    <li class="nav-item">
+                        <a href="/logout">Log Out</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="delete_user/{{username}}">Delete Account</a>
+                    </li>
+                    {% else %}
+                    <li class="nav-item">
+                        <a href="/login">Log In</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/create_user">Create Account</a>
+                    </li>
+                    {% endif %}
+                </ul>
             </div>
-          </div>
-        </header>
+        </nav>
         <!--Navigation Bar-->
 
         <div class="d-flex bd-highlight">
