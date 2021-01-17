@@ -3,6 +3,58 @@ import sqlite3
 
 app = Flask(__name__)
 
+TEAMS = {
+    "1":"Chicago White Sox",
+    "2":"Cleveland Indians",
+    "3":"Detroit Tigers",
+    "4":"Kansas City Royals",
+    "5":"Minnesota Twins",
+    "6":"Baltimore Orioles",
+    "7":"Boston Red Sox",
+    "8":"New York Yankees",
+    "9":"Tampa Bay Rays",
+    "10":"Toronto Blue Jays",
+    "11":"Houston Astros",
+    "12":"Los Angeles Angels",
+    "13":"Oakland Athletics",
+    "14":"Seattle Mariners",
+    "15":"Texas Rangers",
+    "16":"Chicago Cubs",
+    "17":"Cincinnati Reds",
+    "18":"Milwaukee Brewers",
+    "19":"Pittsburgh Pirates",
+    "20":"St. Louis Cardinals",
+    "21":"Atlanta Braves",
+    "22":"Miami Marlins",
+    "23":"New York Mets",
+    "24":"Philadelphia Phillies",
+    "25":"Washington Nationals",
+    "26":"Arizona Diamondbacks",
+    "27":"Colorado Rockies",
+    "28":"Los Angeles Dodgers",
+    "29":"San Diego Padres",
+    "30":"San Francisco Giants"
+}
+
+YEARS = {
+    "1":"2015",
+    "2":"2014",
+    "3":"2013",
+    "4":"2012",
+    "5":"2011",
+    "6":"2010",
+    "7":"2009",
+    "8":"2008",
+    "9":"2007",
+    "10":"2006",
+    "11":"2005",
+    "12":"2004",
+    "13":"2003",
+    "14":"2002",
+    "15":"2001",
+    "16":"2000"
+}
+
 def logged_in(cur, username, password):
     sql = """
         SELECT username,password FROM users WHERE username=? and password=?;
@@ -162,6 +214,8 @@ def delete_user(username):
         res.set_cookie('password', '', expires=0)
         return res
     return render_template('content.html')
+
+
 
 
 app.run()
