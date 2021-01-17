@@ -16,7 +16,6 @@ def logged_in(cur, username, password):
 
 @app.route('/')
 def index():
-
     if logged_in:
         return render_template(
             'content.html',
@@ -30,7 +29,7 @@ def index():
 @app.route('/submit', methods=['GET', 'POST'])
 def submit():
     if request.method == 'POST':
-        print(request)
+        print(request.form.get('team1'))
     else:
         print("GET")
 
