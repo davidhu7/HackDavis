@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang = "en">
+<html lang="en">
   <head>
     <!--Bootstrap CDN-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
@@ -11,14 +11,15 @@
     <!--Navigation Bar-->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container-fluid">
-
         <!--Navbar Image-->
         <a class="navbar-brand" id="mlb-logo" target="_blank" href="https://mlb.com">
             <img src="/static/mlb_logo.jpg" width="30" height="20">MLB
         </a>
-        <div class="collapse navbar-collapse" id="navbarSupportContent">
-
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls=navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto">
             <li class="nav-item active">
               <a href="/" class="nav-link">Home</a>
             </li>
@@ -26,7 +27,6 @@
               <a href="/staff" class="nav-link">Contributors</a>
             </li>
           </ul>
-
           <ul class="navbar-nav ml-auto">
             {% if username %}
               </li>
@@ -45,9 +45,7 @@
               </li>
             {% endif %}
           </ul>
-
         </div>
-
       </div>
     </nav>
     
@@ -58,14 +56,12 @@
     {% endblock %}
 
     <!--Footer-->
-    <footer class="footer">
+    <footer class="footer text-muted bg-light">
       <div class="container">
-        <div class="text-muted py-5">
-          <p class="float-end mb-1">
-            <a href="#top">Back to top</a>
-          </p>
-          <p class="mb-0">New to baseball? <a href="https://www.mlb.com/">Visit the homepage</a>.</p>
-        </div>
+        <p class="float-end mb-1">
+          <a href="#top">Back to top</a>
+        </p>
+        <p class="mb-0">New to baseball? <a href="https://www.mlb.com/">Visit the homepage</a>.</p>
       </div>
     </footer>
 
