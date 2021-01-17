@@ -45,7 +45,7 @@ def submit():
         return render_template('predictor.html', context=dummy_data)
     else:
         print("GET")
-        return render_teamplate('error.html')
+        return render_template('error.html')
 
 
 @app.route('/staff')
