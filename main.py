@@ -27,6 +27,13 @@ def index():
             'content.html'
         )
 
+@app.route('/submit', methods=['GET', 'POST'])
+def submit():
+    if request.method == 'POST':
+        print(request)
+    else:
+        print("GET")
+
 
 @app.route('/login', methods=['get', 'post'])
 def login():
