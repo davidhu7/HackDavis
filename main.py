@@ -30,6 +30,9 @@ def index():
 def submit():
     if request.method == 'POST':
         print(request.form.get('team1'))
+        print(request.form.get('team2'))
+        print(request.form.get('year1'))
+        print(request.form.get('year2'))
     else:
         print("GET")
 
